@@ -106,8 +106,8 @@ public class WorldManager {
                                 new Texture("Textures/note1.png"),
                                 (int) (rect.width * tileScale),
                                 (int) (rect.height * tileScale),
-                                (int) ((rect.x + rect.width/2) * tileScale),
-                                (int) ((rect.y + rect.height/2)* tileScale),
+                                (int) ((rect.x + rect.width / 2) * tileScale),
+                                (int) ((rect.y + rect.height / 2) * tileScale),
                                 world,
                                 (String) object.getProperties().get("texture")
                         )

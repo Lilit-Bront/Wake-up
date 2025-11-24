@@ -22,7 +22,7 @@ public class ScreenRestart implements Screen {
 
     public ScreenRestart(MyGdxGame myGdxGame) {
         this.game = myGdxGame;
-        buttonExit = new TextButton(290, 250, "Textures/buttons/Out.png", "Textures/buttons/Out.png", 112, 64);;
+        buttonExit = new TextButton(290, 250, "Textures/buttons/Out.png", "Textures/buttons/Out.png", 112, 64);
         buttonRestart = new TextButton(230, 390, "Textures/buttons/restart.png", "Textures/buttons/restart.png", 255, 63);
         buttonResume = new TextButton(240, 320, "Textures/buttons/resume.png", "Textures/buttons/resume.png", 218, 65);
 
@@ -33,7 +33,7 @@ public class ScreenRestart implements Screen {
 
     @Override
     public void render(float delta) {
-        game.camera.position.x = SCREEN_WIDTH/2;
+        game.camera.position.x = SCREEN_WIDTH / 2;
         game.camera.update();
         game.batch.setProjectionMatrix(game.camera.combined);
         ScreenUtils.clear(Color.CLEAR);
@@ -69,7 +69,6 @@ public class ScreenRestart implements Screen {
         }
 
     }
-
 
 
     @Override

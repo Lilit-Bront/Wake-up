@@ -15,6 +15,7 @@ import com.mygdx.game.MyGdxGame;
 public class Player extends Component {
 
     enum State {IDLE, RUNNING, ATTACK}
+
     MyGdxGame game;
 
     private Animation<TextureRegion> idelAnimation;
@@ -27,7 +28,6 @@ public class Player extends Component {
     public PhysicsObject physicsObject;
     private long animationStartTime;
     private boolean shouldFlip = false;
-
 
 
     public Player(Texture texture, int width, int height, int x, int y, World world) {
@@ -147,19 +147,17 @@ public class Player extends Component {
         }
 
 
-
-
     }
 
     public void onTouchFlour() {
-        System.out.println("Player has touched flor");
+        //System.out.println("Player has touched flor");
         isTouchingFlor = true;
     }
 
     public void onTouchEnemy() {
         if (state != State.ATTACK) {
             countOfLives -= 1;
-            System.out.println("Left count of lives: " + countOfLives);
+            //System.out.println("Left count of lives: " + countOfLives);
         }
 
     }

@@ -48,8 +48,8 @@ public class ScreenMenu implements Screen {
         buttonStart.draw(game.batch);
         buttonOptions.draw(game.batch);
         buttonOut.draw(game.batch);
-        System.out.println(game.camera.position.x);
-        System.out.println(game.camera.position.y);
+        //System.out.println(game.camera.position.x);
+        //System.out.println(game.camera.position.y);
         game.batch.end();
 
         if (Gdx.input.justTouched()) {

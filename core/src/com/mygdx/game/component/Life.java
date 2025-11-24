@@ -23,15 +23,15 @@ public class Life {
     public void draw(Batch batch, int leftLife, float cameraX) {
 
         if (leftLife == 5) {
-            batch.draw(life5, cameraX - 600, 650, 79*2, 12*2);
+            batch.draw(life5, cameraX - 600, 650, 79 * 2, 12 * 2);
         } else if (leftLife == 4) {
-            batch.draw(life4, cameraX - 600, 650, 79*2, 12*2);
+            batch.draw(life4, cameraX - 600, 650, 79 * 2, 12 * 2);
         } else if (leftLife == 3) {
-            batch.draw(life3, cameraX - 600, 650, 79*2, 12*2);
+            batch.draw(life3, cameraX - 600, 650, 79 * 2, 12 * 2);
         } else if (leftLife == 2) {
-            batch.draw(life2, cameraX - 600, 650, 79*2, 12*2);
+            batch.draw(life2, cameraX - 600, 650, 79 * 2, 12 * 2);
         } else if (leftLife == 1) {
-            batch.draw(life1, cameraX - 600, 650, 79*2, 12*2);
+            batch.draw(life1, cameraX - 600, 650, 79 * 2, 12 * 2);
         }
     }
 }

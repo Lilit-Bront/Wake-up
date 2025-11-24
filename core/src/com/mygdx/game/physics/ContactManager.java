@@ -43,10 +43,10 @@ public class ContactManager implements ContactListener {
         }
 
 
-        System.out.println("Categorial bit a: " + fixtureA.getFilterData().categoryBits);
-        System.out.println("User data a     : " + fixtureA.getUserData());
-        System.out.println("Categorial bit b: " + fixtureB.getFilterData().categoryBits);
-        System.out.println("User data b     : " + fixtureB.getUserData());
+        //System.out.println("Categorial bit a: " + fixtureA.getFilterData().categoryBits);
+        //System.out.println("User data a     : " + fixtureA.getUserData());
+        //System.out.println("Categorial bit b: " + fixtureB.getFilterData().categoryBits);
+        //System.out.println("User data b     : " + fixtureB.getUserData());
 
 
     }

@@ -37,7 +37,7 @@ public class TextButton {
     }
 
     public boolean isTouched(int touchX, int touchY) {
-        if (!Gdx.input.isTouched()){
+        if (!Gdx.input.isTouched()) {
             return false;
         }
         return touchX >= x && touchX <= x + buttonWidth &&
