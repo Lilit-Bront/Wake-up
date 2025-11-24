@@ -11,6 +11,7 @@ import com.badlogic.gdx.maps.tiled.renderers.OrthoCachedTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.World;
+import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.component.Enemy;
 import com.mygdx.game.component.Note;
 import com.mygdx.game.component.Player;
@@ -26,6 +27,7 @@ public class WorldManager {
 
     public Player player;
     public float tileScale;
+    MyGdxGame myGdxGame;
     MapManager mapManager;
     public List<Enemy> enemyList;
 

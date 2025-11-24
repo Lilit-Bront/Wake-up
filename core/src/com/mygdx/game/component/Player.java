@@ -10,24 +10,29 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+import com.mygdx.game.MyGdxGame;
 
 public class Player extends Component {
 
     enum State {IDLE, RUNNING, ATTACK}
+    MyGdxGame game;
 
     private Animation<TextureRegion> idelAnimation;
     private Animation<TextureRegion> runAnimation;
     private Animation<TextureRegion> attackAnimation;
     private State state;
-    private int countOfLives;
+    public int countOfLives;
     private boolean isTouchingFlor;
 
     public PhysicsObject physicsObject;
     private long animationStartTime;
     private boolean shouldFlip = false;
 
+
+
     public Player(Texture texture, int width, int height, int x, int y, World world) {
         super(texture, width, height, x, y);
+
         physicsObject = new PhysicsObject.PhysicalObjectBuilder(world, BodyDef.BodyType.DynamicBody)
                 .addRectangularFixture(width, height, (short) 1)
                 .setInitialPosition(x, y)
@@ -38,6 +43,7 @@ public class Player extends Component {
         isTouchingFlor = true;
 
         countOfLives = COUNT_OF_LIVES;
+
     }
 
     private void createAnimation() {
@@ -139,6 +145,10 @@ public class Player extends Component {
         if (attackAnimation.isAnimationFinished(time)) {
             state = State.IDLE;
         }
+
+
+
+
     }
 
     public void onTouchFlour() {
@@ -151,6 +161,7 @@ public class Player extends Component {
             countOfLives -= 1;
             System.out.println("Left count of lives: " + countOfLives);
         }
+
     }
 
 }

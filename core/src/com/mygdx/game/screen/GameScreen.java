@@ -14,6 +14,7 @@ import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.mygdx.game.MyGdxGame;
 import com.mygdx.game.component.Background;
+import com.mygdx.game.component.Life;
 import com.mygdx.game.component.MobileButtons;
 import com.mygdx.game.component.Player;
 import com.mygdx.game.component.StaticBlock;
@@ -26,10 +27,12 @@ public class GameScreen extends ScreenAdapter {
     Background background;
     MobileButtons mobileButtons;
     TextButton buttonStop;
+    Life life;
 
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
+        life = new Life();
         worldManager = new WorldManager();
         mobileButtons = new MobileButtons();
         background = new Background(new Texture("Textures/background/backgroundGame.png"));
@@ -81,7 +84,6 @@ public class GameScreen extends ScreenAdapter {
         ScreenUtils.clear(Color.CLEAR);
         game.batch.begin();
         background.draw(game.batch, worldManager.tileScale);
-
         game.batch.end();
 
         worldManager.mapRenderer.setView(game.camera);
@@ -100,14 +102,16 @@ public class GameScreen extends ScreenAdapter {
                 worldManager.noteList.get(i).isTouchPlayer = false;
             }
         }
-        /*if (Gdx.app.getType() == Application.ApplicationType.Android) {*/
+        if (Gdx.app.getType() == Application.ApplicationType.Android) {
             mobileButtons.draw(game.batch, game.camera.position.x);
-        //}
+        }
+
+        life.draw(game.batch, worldManager.player.countOfLives, game.camera.position.x);
         game.batch.end();
 
 
 
-        game.debugRenderer.render(worldManager.world, game.camera.combined.cpy().scl(1 / SCALE));
+        //game.debugRenderer.render(worldManager.world, game.camera.combined.cpy().scl(1 / SCALE));
 
     }
 }
