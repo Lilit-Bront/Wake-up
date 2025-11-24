@@ -35,10 +35,10 @@ public class ContactManager implements ContactListener {
         }
 
         if (object1 instanceof Player && object2 instanceof Note) {
-            ((Player) object1).onTouchEnemy();
+            //((Player) object1).onTouchEnemy();
             ((Note) object2).onTouchPlayer();
         } else if (object1 instanceof Note && object2 instanceof Player) {
-            ((Player) object2).onTouchEnemy();
+            //((Player) object2).onTouchEnemy();
             ((Note) object1).onTouchPlayer();
         }
 

@@ -44,7 +44,7 @@ public class GameScreen extends ScreenAdapter {
         int touchY = Gdx.input.getY();
         Vector3 unprojectCamera = game.camera.unproject(new Vector3(touchX, touchY, 0));
         if (Gdx.input.isKeyPressed(Input.Keys.W) || mobileButtons.buttonStop.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            game.camera.position.x = SCREEN_WIDTH/2;
+            game.camera.position.x = SCREEN_WIDTH / 2;
             game.setScreen(game.screenRestart);
         }
         if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || mobileButtons.buttonBackwardTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
@@ -96,7 +96,6 @@ public class GameScreen extends ScreenAdapter {
         }
         for (int i = 0; i < worldManager.noteList.size(); i++) {
             worldManager.noteList.get(i).draw(game.batch);
-            worldManager.noteList.get(i).drawNote(game.batch, (int) game.camera.position.x);
 
             if (Gdx.input.justTouched()) {
                 worldManager.noteList.get(i).isTouchPlayer = false;
@@ -107,8 +106,12 @@ public class GameScreen extends ScreenAdapter {
         }
 
         life.draw(game.batch, worldManager.player.countOfLives, game.camera.position.x);
-        game.batch.end();
 
+        for (int i = 0; i < worldManager.noteList.size(); i++) {
+            worldManager.noteList.get(i).drawNote(game.batch, (int) game.camera.position.x);
+
+        }
+        game.batch.end();
 
 
         //game.debugRenderer.render(worldManager.world, game.camera.combined.cpy().scl(1 / SCALE));
