@@ -14,11 +14,11 @@ public class MobileButtons {
     public TextButton buttonStop;
 
     public MobileButtons() {
-        buttonForwardTexture = new TextButton(200, 50, "Textures/buttons/buttonForwardTexture.png", "Textures/buttons/buttonForwardTexture.png", 80, 80);
-        buttonBackwardTexture = new TextButton(100, 50, "Textures/buttons/buttonBackwardTexture.png", "Textures/buttons/buttonBackwardTexture.png", 80, 80);
-        buttonUpTexture = new TextButton(1100, 50, "Textures/buttons/buttonUpTexture.png", "Textures/buttons/buttonUpTexture.png", 80, 80);
-        buttonAttackTexture = new TextButton(1000, 50, "Textures/buttons/buttonAttackTexture.png", "Textures/buttons/buttonAttackTexture.png", 80, 80);
-        buttonStop = new TextButton(1130, 600, "Textures/buttons/Stop.png", "Textures/buttons/Stop.png", 80, 80);
+        buttonForwardTexture = new TextButton(200, 50, "Textures/buttons/buttonForwardTexture.png", "Textures/buttons/buttonForwardTexture.png", 100, 110);
+        buttonBackwardTexture = new TextButton(100, 50, "Textures/buttons/buttonBackwardTexture.png", "Textures/buttons/buttonBackwardTexture.png", 100, 110);
+        buttonUpTexture = new TextButton(1100, 50, "Textures/buttons/buttonUpTexture.png", "Textures/buttons/buttonUpTexture.png", 100, 110);
+        buttonAttackTexture = new TextButton(1000, 50, "Textures/buttons/buttonAttackTexture.png", "Textures/buttons/buttonAttackTexture.png", 100, 110);
+        buttonStop = new TextButton(1130, 600, "Textures/buttons/Stop.png", "Textures/buttons/Stop.png", 100, 110);
     }
 
     public void draw(Batch batch, float cameraX) {

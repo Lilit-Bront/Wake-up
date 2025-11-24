@@ -40,24 +40,26 @@ public class GameScreen extends ScreenAdapter {
     }
 
     public void handleInput() {
-        int touchX = Gdx.input.getX();
-        int touchY = Gdx.input.getY();
-        Vector3 unprojectCamera = game.camera.unproject(new Vector3(touchX, touchY, 0));
-        if (Gdx.input.isKeyPressed(Input.Keys.W) || mobileButtons.buttonStop.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            game.camera.position.x = SCREEN_WIDTH / 2;
-            game.setScreen(game.screenRestart);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || mobileButtons.buttonBackwardTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            worldManager.player.moveLeft();
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) || mobileButtons.buttonForwardTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            worldManager.player.moveRight();
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.UP) || mobileButtons.buttonUpTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            worldManager.player.moveUp();
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.F) || mobileButtons.buttonAttackTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
-            worldManager.player.moveAttackRight();
+        for (int i = 0; i < Gdx.input.getMaxPointers(); i++) {
+            int touchX = Gdx.input.getX(i);
+            int touchY = Gdx.input.getY(i);
+            Vector3 unprojectCamera = game.camera.unproject(new Vector3(touchX, touchY, 0));
+            if (Gdx.input.isKeyPressed(Input.Keys.W) || mobileButtons.buttonStop.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
+                game.camera.position.x = SCREEN_WIDTH / 2;
+                game.setScreen(game.screenRestart);
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || mobileButtons.buttonBackwardTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
+                worldManager.player.moveLeft();
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT) || mobileButtons.buttonForwardTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
+                worldManager.player.moveRight();
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.UP) || mobileButtons.buttonUpTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
+                worldManager.player.moveUp();
+            }
+            if (Gdx.input.isKeyPressed(Input.Keys.F) || mobileButtons.buttonAttackTexture.isTouched((int) unprojectCamera.x, (int) unprojectCamera.y)) {
+                worldManager.player.moveAttackRight();
+            }
         }
     }
 
