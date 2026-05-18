@@ -11,4 +11,7 @@ public class GameSettings {
 
     public static final int ENEMY_WALK_LENGTH = 200;
     public static final int COUNT_OF_LIVES = 5;
+    public static final short PLAYER_BIT = 16;      // бит игрока
+    public static final short ENEMY_BODY_BIT = 32;  // физическое тело монстра
+    public static final short ENEMY_SENSOR_BIT = 64;
 }

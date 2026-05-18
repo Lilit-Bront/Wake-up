@@ -5,6 +5,7 @@ import com.badlogic.gdx.physics.box2d.ContactImpulse;
 import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Fixture;
 import com.badlogic.gdx.physics.box2d.Manifold;
+import com.mygdx.game.GameSettings;
 import com.mygdx.game.component.Enemy;
 import com.mygdx.game.component.Note;
 import com.mygdx.game.component.Player;
@@ -19,6 +20,8 @@ public class ContactManager implements ContactListener {
 
         Object object1 = fixtureA.getUserData();
         Object object2 = fixtureB.getUserData();
+
+
 
         if (object1 instanceof Player && object2 instanceof StaticBlock) {
             ((Player) object1).onTouchFlour();
@@ -43,7 +46,8 @@ public class ContactManager implements ContactListener {
         }
 
 
-        //System.out.println("Categorial bit a: " + fixtureA.getFilterData().categoryBits);
+
+    //System.out.println("Categorial bit a: " + fixtureA.getFilterData().categoryBits);
         //System.out.println("User data a     : " + fixtureA.getUserData());
         //System.out.println("Categorial bit b: " + fixtureB.getFilterData().categoryBits);
         //System.out.println("User data b     : " + fixtureB.getUserData());

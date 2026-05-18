@@ -92,7 +92,7 @@ public class PhysicsObject implements Disposable {
             return this;
         }
 
-        public PhysicalObjectBuilder setBodyAsSensor() {
+                public PhysicalObjectBuilder setBodyAsSensor() {
             for (Fixture fixture : fixturesList) {
                 fixture.setSensor(true);
             }

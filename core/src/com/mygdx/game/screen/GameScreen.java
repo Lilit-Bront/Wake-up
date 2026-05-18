@@ -1,3 +1,4 @@
+
 package com.mygdx.game.screen;
 
 import static com.mygdx.game.GameSettings.SCALE;
@@ -19,6 +20,7 @@ import com.mygdx.game.component.MobileButtons;
 import com.mygdx.game.component.Player;
 import com.mygdx.game.component.StaticBlock;
 import com.mygdx.game.component.TextButton;
+import com.mygdx.game.physics.AudioManager;
 import com.mygdx.game.physics.WorldManager;
 
 public class GameScreen extends ScreenAdapter {
@@ -28,11 +30,13 @@ public class GameScreen extends ScreenAdapter {
     MobileButtons mobileButtons;
     TextButton buttonStop;
     Life life;
+    AudioManager backgroundMusic;
 
 
     public GameScreen(MyGdxGame game) {
         this.game = game;
         life = new Life();
+        backgroundMusic = new AudioManager();
         worldManager = new WorldManager();
         mobileButtons = new MobileButtons();
         background = new Background(new Texture("Textures/background/backgroundGame.png"));

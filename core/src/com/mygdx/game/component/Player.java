@@ -24,7 +24,6 @@ public class Player extends Component {
     private State state;
     public int countOfLives;
     private boolean isTouchingFlor;
-
     public PhysicsObject physicsObject;
     private long animationStartTime;
     private boolean shouldFlip = false;
@@ -161,5 +160,30 @@ public class Player extends Component {
         }
 
     }
+
+        private int health = 100;
+
+        public PhysicsObject getPhysicsObject() {
+            return physicsObject;
+        }
+
+        public int getX() {
+            return physicsObject.getX();
+        }
+
+        public int getY() {
+            return physicsObject.getY();
+        }
+
+        public void takeDamage(int damage) {
+            health -= damage;
+            if (health <= 0) {
+                // смерть игрока
+            }
+        }
+
+        public int getHealth() {
+            return health;
+        }
 
 }

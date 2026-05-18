@@ -14,10 +14,12 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Box2D;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.physics.box2d.World;
+import com.mygdx.game.physics.AudioManager;
 import com.mygdx.game.physics.ContactManager;
 import com.mygdx.game.screen.GameScreen;
 import com.mygdx.game.screen.ScreenMenu;
 import com.mygdx.game.screen.ScreenRestart;
+import com.mygdx.game.screen.ScreenSetting;
 
 public class MyGdxGame extends Game {
 
@@ -31,13 +33,15 @@ public class MyGdxGame extends Game {
     public GameScreen gameScreen;
     public ScreenMenu screenMenu;
     public ScreenRestart screenRestart;
+    public ScreenSetting screenSetting;
+    public AudioManager audioManager;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 1280, 720);
-
+        audioManager = new AudioManager();
 
         Box2D.init();
         debugRenderer = new Box2DDebugRenderer();
@@ -47,6 +51,7 @@ public class MyGdxGame extends Game {
         gameScreen = new GameScreen(this);
         screenMenu = new ScreenMenu(this);
         screenRestart = new ScreenRestart(this);
+        screenSetting = new ScreenSetting(this);
         setScreen(screenMenu);
     }
 
@@ -61,3 +66,4 @@ public class MyGdxGame extends Game {
         }
     }
 }
+
